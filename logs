@@ -1,0 +1,100 @@
+2023-03-24T10:17:29.088630+00:00 app[web.1]: [2023-03-24 10:17:29 +0000] [2] [INFO] Reason: Worker failed to boot.
+2023-03-24T10:17:29.246704+00:00 heroku[web.1]: Process exited with status 3
+2023-03-24T10:17:29.300621+00:00 heroku[web.1]: State changed from up to crashed
+2023-03-24T10:17:29.303701+00:00 heroku[web.1]: State changed from crashed to starting
+2023-03-24T10:17:32.464735+00:00 heroku[web.1]: Starting process with command `gunicorn learninglog.wsgi --log-file -`
+2023-03-24T10:17:34.839972+00:00 app[web.1]: [2023-03-24 10:17:34 +0000] [2] [INFO] Starting gunicorn 20.1.0
+2023-03-24T10:17:34.840291+00:00 app[web.1]: [2023-03-24 10:17:34 +0000] [2] [INFO] Listening at: http://0.0.0.0:39869 (2)
+2023-03-24T10:17:34.840344+00:00 app[web.1]: [2023-03-24 10:17:34 +0000] [2] [INFO] Using worker: sync
+2023-03-24T10:17:34.843576+00:00 app[web.1]: [2023-03-24 10:17:34 +0000] [7] [INFO] Booting worker with pid: 7
+2023-03-24T10:17:34.847088+00:00 app[web.1]: [2023-03-24 10:17:34 +0000] [8] [INFO] Booting worker with pid: 8
+2023-03-24T10:17:35.184300+00:00 heroku[web.1]: State changed from starting to up
+2023-03-24T10:17:35.449944+00:00 app[web.1]: [2023-03-24 10:17:35 +0000] [8] [ERROR] Exception in worker process
+2023-03-24T10:17:35.449971+00:00 app[web.1]: Traceback (most recent call last):
+2023-03-24T10:17:35.449972+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2023-03-24T10:17:35.449988+00:00 app[web.1]: worker.init_process()
+2023-03-24T10:17:35.449989+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2023-03-24T10:17:35.449990+00:00 app[web.1]: self.load_wsgi()
+2023-03-24T10:17:35.449990+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2023-03-24T10:17:35.449991+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2023-03-24T10:17:35.449991+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2023-03-24T10:17:35.449991+00:00 app[web.1]: self.callable = self.load()
+2023-03-24T10:17:35.449991+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2023-03-24T10:17:35.449992+00:00 app[web.1]: return self.load_wsgiapp()
+2023-03-24T10:17:35.449992+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2023-03-24T10:17:35.449992+00:00 app[web.1]: return util.import_app(self.app_uri)
+2023-03-24T10:17:35.449993+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+2023-03-24T10:17:35.449993+00:00 app[web.1]: mod = importlib.import_module(module)
+2023-03-24T10:17:35.449994+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/importlib/__init__.py", line 126, in import_module
+2023-03-24T10:17:35.449995+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2023-03-24T10:17:35.449995+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2023-03-24T10:17:35.449996+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2023-03-24T10:17:35.449996+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2023-03-24T10:17:35.449996+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2023-03-24T10:17:35.449996+00:00 app[web.1]: File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2023-03-24T10:17:35.449997+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2023-03-24T10:17:35.449997+00:00 app[web.1]: File "/app/learninglog/wsgi.py", line 16, in <module>
+2023-03-24T10:17:35.449997+00:00 app[web.1]: application = get_wsgi_application()
+2023-03-24T10:17:35.449997+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+2023-03-24T10:17:35.449998+00:00 app[web.1]: django.setup(set_prefix=False)
+2023-03-24T10:17:35.449998+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+2023-03-24T10:17:35.449998+00:00 app[web.1]: apps.populate(settings.INSTALLED_APPS)
+2023-03-24T10:17:35.449999+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/django/apps/registry.py", line 91, in populate
+2023-03-24T10:17:35.449999+00:00 app[web.1]: app_config = AppConfig.create(entry)
+2023-03-24T10:17:35.449999+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/django/apps/config.py", line 193, in create
+2023-03-24T10:17:35.449999+00:00 app[web.1]: import_module(entry)
+2023-03-24T10:17:35.449999+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/importlib/__init__.py", line 126, in import_module
+2023-03-24T10:17:35.450000+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2023-03-24T10:17:35.450000+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2023-03-24T10:17:35.450000+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2023-03-24T10:17:35.450000+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+2023-03-24T10:17:35.450000+00:00 app[web.1]: ModuleNotFoundError: No module named 'bootstrap4'
+2023-03-24T10:17:35.450042+00:00 app[web.1]: [2023-03-24 10:17:35 +0000] [8] [INFO] Worker exiting (pid: 8)
+2023-03-24T10:17:35.450371+00:00 app[web.1]: [2023-03-24 10:17:35 +0000] [7] [ERROR] Exception in worker process
+2023-03-24T10:17:35.450371+00:00 app[web.1]: Traceback (most recent call last):
+2023-03-24T10:17:35.450372+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2023-03-24T10:17:35.450372+00:00 app[web.1]: worker.init_process()
+2023-03-24T10:17:35.450372+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2023-03-24T10:17:35.450372+00:00 app[web.1]: self.load_wsgi()
+2023-03-24T10:17:35.450372+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2023-03-24T10:17:35.450372+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2023-03-24T10:17:35.450372+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2023-03-24T10:17:35.450373+00:00 app[web.1]: self.callable = self.load()
+2023-03-24T10:17:35.450373+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2023-03-24T10:17:35.450373+00:00 app[web.1]: return self.load_wsgiapp()
+2023-03-24T10:17:35.450373+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2023-03-24T10:17:35.450373+00:00 app[web.1]: return util.import_app(self.app_uri)
+2023-03-24T10:17:35.450373+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/gunicorn/util.py", line 359, in import_app
+2023-03-24T10:17:35.450373+00:00 app[web.1]: mod = importlib.import_module(module)
+2023-03-24T10:17:35.450374+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/importlib/__init__.py", line 126, in import_module
+2023-03-24T10:17:35.450374+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2023-03-24T10:17:35.450374+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2023-03-24T10:17:35.450374+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2023-03-24T10:17:35.450374+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+2023-03-24T10:17:35.450375+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+2023-03-24T10:17:35.450375+00:00 app[web.1]: File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+2023-03-24T10:17:35.450375+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2023-03-24T10:17:35.450375+00:00 app[web.1]: File "/app/learninglog/wsgi.py", line 16, in <module>
+2023-03-24T10:17:35.450375+00:00 app[web.1]: application = get_wsgi_application()
+2023-03-24T10:17:35.450375+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+2023-03-24T10:17:35.450375+00:00 app[web.1]: django.setup(set_prefix=False)
+2023-03-24T10:17:35.450376+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/django/__init__.py", line 24, in setup
+2023-03-24T10:17:35.450376+00:00 app[web.1]: apps.populate(settings.INSTALLED_APPS)
+2023-03-24T10:17:35.450376+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/django/apps/registry.py", line 91, in populate
+2023-03-24T10:17:35.450376+00:00 app[web.1]: app_config = AppConfig.create(entry)
+2023-03-24T10:17:35.450376+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/site-packages/django/apps/config.py", line 193, in create
+2023-03-24T10:17:35.450376+00:00 app[web.1]: import_module(entry)
+2023-03-24T10:17:35.450376+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.10/importlib/__init__.py", line 126, in import_module
+2023-03-24T10:17:35.450376+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2023-03-24T10:17:35.450377+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+2023-03-24T10:17:35.450377+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+2023-03-24T10:17:35.450377+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+2023-03-24T10:17:35.450377+00:00 app[web.1]: ModuleNotFoundError: No module named 'bootstrap4'
+2023-03-24T10:17:35.450534+00:00 app[web.1]: [2023-03-24 10:17:35 +0000] [7] [INFO] Worker exiting (pid: 7)
+2023-03-24T10:17:35.513766+00:00 app[web.1]: [2023-03-24 10:17:35 +0000] [2] [WARNING] Worker with pid 7 was terminated due to signal 15
+2023-03-24T10:17:35.611504+00:00 app[web.1]: [2023-03-24 10:17:35 +0000] [2] [INFO] Shutting down: Master
+2023-03-24T10:17:35.611563+00:00 app[web.1]: [2023-03-24 10:17:35 +0000] [2] [INFO] Reason: Worker failed to boot.
+2023-03-24T10:17:35.882244+00:00 heroku[web.1]: Process exited with status 3
+2023-03-24T10:17:35.920845+00:00 heroku[web.1]: State changed from up to crashed
+2023-03-24T10:17:37.946575+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=enigmatic-eyrie-70705.herokuapp.com request_id=7e3bb83e-45ff-4887-9a3b-cdf7b236a6c7 fwd="154.160.16.79" dyno=web.1 connect=0ms service= status=503 bytes= protocol=https
+2023-03-24T10:17:38.919686+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=enigmatic-eyrie-70705.herokuapp.com request_id=d563752f-9c47-43b4-825c-53bf7c70c425 fwd="154.160.16.79" dyno= connect= service= status=503 bytes= protocol=https
